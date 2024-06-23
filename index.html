@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wordcount.in</title>
+</head>
+<body>
+    <center><h1>wordcount.in</h1></center>
+
+ <center>   <form action="">
+        <textarea style="width: 100%;" name="" id="write" rows="15" cols="105" placeholder="Start form here">
+
+        </textarea>
+    </form>
+    <br>
+    <button>Letters</button><span style="font-size: 20;" id="show"></span>
+    <button >words</button><span id="showw"></span>
+</center>
+
+<script>
+
+let how=document.querySelector("#write");
+let know=document.querySelector("#show")
+let knowe=document.querySelector("#showw")
+
+how.addEventListener("input",function()
+{
+
+    let letters=this.value;
+    let free=letters.trim();
+    let countletter=free.length;
+    know.innerHTML=countletter;
+
+
+// trim() age or piche ke space ko remove kar deta hai
+    let tree=letters.trim();
+    // //split(" ") break karne ka kaam karta hai 
+    let countword=tree.split(" ");
+
+    let cleanList=countword.filter(function(e)
+    {
+        return e != "";
+    })
+
+    knowe.innerHTML=cleanList.length;
+  
+
+})
+
+    
+    
+
+</script>
+</body>
+</html>
